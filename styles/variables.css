@@ -2,3 +2,35 @@
   Переменные для вашего проекта
   и их переопределение под различные устройства
 */
+:root {
+  --light-pink: #f1b2ce;
+  --dark-pink: #ff0070;
+  --opacity-pink: #ff007066;
+  --purple: #db00ff;
+  --black: #000028;
+
+  --text-color: var(--light-pink);
+  --accent-color: var(--dark-pink);
+  --text-bkg: var(--dark-pink);
+  --opacity-accent: var(--opacity-pink);
+  --heading-color: var(--black);
+  --title-color: var(--purple);
+  --background-color: var(--black);
+  --background-image: url(../images/cover-image-dark.png);
+
+  --border: 1px solid var(--accent-color);
+  --opacity-border: 1px solid var(--opacity-accent);
+
+  --line-height: 1.4625rem; /* 23.4px */
+  --font-size: 18px;
+
+  --padding-xs: 10px;
+  --padding-s: 20px;
+
+  --margin-xs: 10px;
+  --margin-s: 20px;
+  --margin-m: 40px;
+  --margin-l: 50px;
+  --margin-xl: 60px;
+  --margin-xxl: 80px;
+}

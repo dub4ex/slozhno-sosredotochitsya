@@ -1,5 +1,342 @@
 /* Основные стили проекта. Это стили для темы, которую вы верстаете первой. */
 
+/* сюда пиши всё для комп темной, потом здесь же ниже напишешь медиа для других экранов */
+
 .page {
   /* сохраните в разметке и стилях класс page. На его основе работает скрипт. */
+  background-color: var(--background-color);
+  background: var(--background-image) no-repeat center/cover;
+  background-attachment: fixed;
+}
+
+.header {
+  position: relative;
+  display: grid;
+  grid-template-rows: 1fr min-content 1fr;
+  height: calc(100vh);
+  padding: var(--padding-s);
+}
+
+.header__decoration-item {
+  color: var(--accent-color);
+  text-transform: uppercase;
+  position: absolute;
+  inset-block-start: 20px;
+  inset-inline-end: 29px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 18px;
+  line-height: 25px;
+}
+
+.header__decoration-item::after {
+  content: "";
+  background-color: var(--accent-color);
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  box-shadow: 0 0 4px 2px currentColor;
+}
+
+.header__theme-menu-list {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  justify-content: center;
+}
+
+.header__theme-menu-button {
+  background-color: transparent;
+  color: var(--accent-color);
+  text-transform: lowercase;
+  border: 1px solid transparent;
+  font-size: var(--font-size);
+  line-height: 18px;
+  padding: 1.5px 13px;
+  cursor: pointer;
+}
+
+.header__theme-menu-button:hover {
+  border: var(--opacity-border);
+}
+
+.header__theme-menu-button:focus {
+  outline: none;
+}
+
+.header__theme-menu-button:focus-visible {
+  outline: none;
+  border-block-end: var(--border);
+}
+
+.header__theme-menu-button_active {
+  border: var(--border);
+  pointer-events: none;
+}
+
+.style-main-title {
+  color: var(--title-color);
+  font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
+  line-height: clamp(6.188rem, 0.463rem + 11.926vw, 8.096rem);
+}
+
+.header__title {
+  margin: 0 -20px;
+  text-shadow: 4px 4px 0 var(--text-bkg);
+}
+
+.title-decor {
+  background-color: var(--text-bkg);
+  color: var(--heading-color);
+  font-weight: 700;
+  font-size: var(--font-size);
+  line-height: var(--line-height);
+}
+
+.title-description {
+  width: 50%;
+  justify-self: end;
+  align-self: center;
+}
+
+.decorated-zone::after {
+  content: "";
+  width: 25px;
+  height: 25px;
+  color: var(--accent-color);
+  border-block-start: var(--border);
+  border-inline-end: var(--border);
+  position: absolute;
+  inset-block-start: var(--padding-s);
+  inset-inline-end: var(--padding-s);
+}
+
+.decorated-zone::before {
+  content: "";
+  width: 25px;
+  height: 25px;
+  color: var(--accent-color);
+  border-block-end: var(--border);
+  border-inline-start: var(--border);
+  position: absolute;
+  inset-block-end: var(--padding-s);
+  inset-inline-start: var(--padding-s);
+}
+
+.main {
+  margin-block-start: var(--margin-xl);
+  padding-inline: var(--padding-s);
+}
+
+.section-wrapper {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-auto-rows: min-content;
+  gap: 20px;
+}
+
+.section-wrapper + .section-wrapper {
+  margin-block-start: var(--margin-xxl);
+}
+
+.section-title {
+  font-size: var(--font-size);
+  line-height: var(--line-height);
+  color: var(--accent-color);
+}
+
+.rows-article {
+  grid-column: 2 / span 2;
+}
+
+.article-text {
+  margin-block-start: var(--margin-xs);
+  font-size: var(--font-size);
+  line-height: var(--line-height);
+  color: var(--text-color);
+}
+
+.word-decor {
+  text-shadow: 2px 2px 0 var(--text-bkg);
+  text-decoration: none;
+}
+
+.word-decor:hover {
+  border-block-end: 1px solid var(--text-color);
+}
+
+.word-decor:focus {
+  outline: none;
+}
+
+.word-decor:focus-visible {
+  outline: 1px solid var(--text-color);
+}
+
+.columns-article {
+  grid-row: 2;
+}
+
+.pseudo-title {
+  margin-block-end: var(--margin-s);
+}
+
+.normal-weight {
+  font-weight: 400;
+}
+
+.gallery {
+  margin-block-start: var(--margin-xxl);
+}
+
+.gallery-container {
+  margin-block-start: var(--margin-s);
+}
+
+.gallery__pic {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.pic1 {
+  grid-column: 1 / 3;
+  grid-row: 1 / 2;
+}
+
+.pic2 {
+  grid-column: 3 / 4;
+  grid-row: 1 / 3;
+}
+
+.pic3 {
+  grid-column: 1 / 2;
+  grid-row: 2 / 4;
+}
+
+.pic4 {
+  grid-column: 2 / 3;
+  grid-row: 2 / 3;
+}
+
+.pic5 {
+  grid-column: 2 / 4;
+  grid-row: 3 / 4;
+}
+
+.footer {
+  position: relative;
+  height: 100vh;
+  display: grid;
+  justify-items: center;
+  align-items: center;
+  margin-block-start: var(--margin-xl);
+}
+
+.footer-title {
+  text-shadow: 2px 2px 0 var(--text-bkg);
+}
+
+@media (width < 1024px) {
+  .header__theme-menu {
+    align-self: center;
+  }
+
+  .header__theme-menu-list {
+    flex-direction: column;
+    align-items: flex-end;
+  }
+
+  .columns-article {
+    grid-column: 1 / 4;
+    grid-row: auto;
+  }
+}
+
+@media (width < 768px) {
+  .header {
+    padding: clamp(var(--padding-xs), 0.029rem + 2.545vw, var(--padding-s));
+  }
+  .header__decoration-item {
+    inset-block-start: clamp(10px, 0.029rem + 2.545vw, 20px);
+    inset-inline-end: clamp(19px, 0.591rem + 2.545vw, 29px);
+  }
+  .header__title {
+    margin: 0;
+  }
+
+  .style-main-title {
+    font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
+    line-height: clamp(5.981rem, 5.784rem + 0.84vw, 6.188rem);
+  }
+
+  .title-description {
+    width: 100%;
+  }
+
+  .decorated-zone::after {
+    inset-block-start: clamp(
+      var(--padding-xs),
+      0.029rem + 2.545vw,
+      var(--padding-s)
+    );
+    inset-inline-end: clamp(
+      var(--padding-xs),
+      0.029rem + 2.545vw,
+      var(--padding-s)
+    );
+  }
+
+  .decorated-zone::before {
+    inset-block-end: clamp(
+      var(--padding-xs),
+      0.029rem + 2.545vw,
+      var(--padding-s)
+    );
+    inset-inline-start: clamp(
+      var(--padding-xs),
+      0.029rem + 2.545vw,
+      var(--padding-s)
+    );
+  }
+
+  .main {
+    margin-block-start: var(--margin-m);
+    padding-inline: var(--padding-xs);
+  }
+
+  .section-wrapper {
+    display: block;
+  }
+
+  .section-wrapper + .section-wrapper {
+    margin-block-start: var(--margin-l);
+  }
+
+  .rows-article {
+    margin-block-start: var(--margin-s);
+  }
+
+  .columns-article {
+    margin-block-start: var(--margin-s);
+  }
+
+  .gallery {
+    margin-block-start: var(--margin-l);
+  }
+
+  .gallery-container {
+    margin-block-start: var(--margin-xs);
+  }
+
+  .gallery-container div:not(:first-child) {
+    margin-block-start: var(--margin-xs);
+  }
+
+  .footer {
+    margin-block-start: var(--margin-m);
+  }
 }

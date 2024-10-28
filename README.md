@@ -1,1 +1,1 @@
-edit
+https://github.com/dub4ex/slozhno-sosredotochitsya.git
