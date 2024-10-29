@@ -10,7 +10,6 @@
     чем стили в медиазапросе предпочтений пользователя
   */
 
-  --s-light-pink: #fff1f7;
   --light-pink: #ffc2e6;
   --pink: #ff8dcb;
   --grey: #353430;
@@ -22,7 +21,6 @@
   --opacity-accent: var(--opacity-grey);
   --heading-color: var(--grey);
   --title-color: var(--light-pink);
-  --background-color: var(--s-light-pink);
   --background-image: url(../images/cover-image-light.png);
 
   --border: 1px solid var(--accent-color);
@@ -35,7 +33,6 @@
 
 @media (prefers-color-scheme: light) {
   :root {
-    --s-light-pink: #fff1f7;
     --light-pink: #ffc2e6;
     --pink: #ff8dcb;
     --grey: #353430;
@@ -47,14 +44,12 @@
     --opacity-accent: var(--opacity-grey);
     --heading-color: var(--grey);
     --title-color: var(--light-pink);
-    --background-color: var(--s-light-pink);
     --background-image: url(../images/cover-image-light.png);
 
     --border: 1px solid var(--accent-color);
     --opacity-border: 1px solid var(--opacity-accent);
-
-    & .header__decoration-item {
-      display: none;
-    }
+  }
+  .theme_auto .header__decoration-item {
+    display: none;
   }
 }

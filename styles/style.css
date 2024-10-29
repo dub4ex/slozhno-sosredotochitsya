@@ -4,7 +4,6 @@
 
 .page {
   /* сохраните в разметке и стилях класс page. На его основе работает скрипт. */
-  background-color: var(--background-color);
   background: var(--background-image) no-repeat center/cover;
   background-attachment: fixed;
 }
@@ -13,7 +12,8 @@
   position: relative;
   display: grid;
   grid-template-rows: 1fr min-content 1fr;
-  height: calc(100vh);
+  height: 100vh;
+  min-height: 668px;
   padding: var(--padding-s);
 }
 
@@ -146,7 +146,7 @@
   color: var(--accent-color);
 }
 
-.rows-article {
+.article-type-a {
   grid-column: 2 / span 2;
 }
 
@@ -163,7 +163,7 @@
 }
 
 .word-decor:hover {
-  border-block-end: 1px solid var(--text-color);
+  border-block-end: 1px solid currentColor;
 }
 
 .word-decor:focus {
@@ -171,11 +171,16 @@
 }
 
 .word-decor:focus-visible {
-  outline: 1px solid var(--text-color);
+  outline: 1px solid currentColor;
 }
 
-.columns-article {
-  grid-row: 2;
+.section-wrapper-type-b {
+  grid-template-areas: "header header header";
+}
+
+.section-wrapper-type-b .section-title {
+  grid-area: header;
+  max-width: clamp(236px, -0.063rem + 30.859vw, 315px);
 }
 
 .pseudo-title {
@@ -230,6 +235,7 @@
 .footer {
   position: relative;
   height: 100vh;
+  min-height: 668px;
   display: grid;
   justify-items: center;
   align-items: center;
@@ -250,7 +256,12 @@
     align-items: flex-end;
   }
 
-  .columns-article {
+  .article-type-a {
+    width: clamp(472px, -3.688rem + 69.141vw, 649px);
+    justify-self: end;
+  }
+
+  .article-type-b {
     grid-column: 1 / 4;
     grid-row: auto;
   }
@@ -316,11 +327,16 @@
     margin-block-start: var(--margin-l);
   }
 
-  .rows-article {
+  .article-type-a {
     margin-block-start: var(--margin-s);
+    width: 100%;
   }
 
-  .columns-article {
+  .section-wrapper-type-b .section-title {
+    max-width: 100%;
+  }
+
+  .article-type-b {
     margin-block-start: var(--margin-s);
   }
 

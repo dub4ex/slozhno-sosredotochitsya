@@ -15,7 +15,6 @@
   --opacity-accent: var(--opacity-pink);
   --heading-color: var(--black);
   --title-color: var(--purple);
-  --background-color: var(--black);
   --background-image: url(../images/cover-image-dark.png);
 
   --border: 1px solid var(--accent-color);
