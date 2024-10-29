@@ -25,17 +25,11 @@
 
   --border: 1px solid var(--accent-color);
   --opacity-border: 1px solid var(--opacity-accent);
-
-  /* & .header__decoration-item {
-    display: none;
-  } */
 }
 
-.theme_light .header__decoration-item{
-  display: none; /* используется в день префер дарк */
+.theme_light .header__decoration-item {
+  display: none; /* используется в день prefers dark */
 }
-
-
 
 @media (prefers-color-scheme: light) {
   :root {
@@ -57,10 +51,14 @@
   }
 
   .theme_auto .header__decoration-item {
-    display: none; /* используется в авто префер лайт */
+    display: none; /* используется в авто prefers light */
+  }
+
+  .page:not(.theme_dark) .header__decoration-item {
+    display: none; /* Используется в авто при первой загрузке без классов */
   }
 
   .theme_light .header__decoration-item {
-    display: none;  /* используется в день префер лайт */
+    display: none; /* используется в день prefers light */
   }
 }
