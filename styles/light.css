@@ -26,10 +26,16 @@
   --border: 1px solid var(--accent-color);
   --opacity-border: 1px solid var(--opacity-accent);
 
-  & .header__decoration-item {
+  /* & .header__decoration-item {
     display: none;
-  }
+  } */
 }
+
+.theme_light .header__decoration-item{
+  display: none; /* используется в день префер дарк */
+}
+
+
 
 @media (prefers-color-scheme: light) {
   :root {
@@ -49,7 +55,12 @@
     --border: 1px solid var(--accent-color);
     --opacity-border: 1px solid var(--opacity-accent);
   }
+
   .theme_auto .header__decoration-item {
-    display: none;
+    display: none; /* используется в авто префер лайт */
+  }
+
+  .theme_light .header__decoration-item {
+    display: none;  /* используется в день префер лайт */
   }
 }
